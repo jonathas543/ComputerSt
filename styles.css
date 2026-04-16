@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: rgb(75, 26, 120);
+    color: rgb(250, 255, 255);
+    font-size: 16px;
+    overflow: hidden;
+}
+
+header {
+    position: fixed;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%);
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 600px;
+    gap: 10%;
+    z-index: 2;
+
+    & nav {
+        & ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+        }
+    }
+
+}
+
+section {
+    background-image: radial-gradient(rgb(41, 4, 115), rgb(34, 10, 55));
+    height: 100vh;
+    position: relative;
+
+
+    & .lista {
+        width: 70vw;
+        height: 100%;
+        margin: auto;
+        position: relative;
+
+        & .Itens {
+            position: absolute;
+            inset: 0;
+
+            & .img_Pc {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50);
+                width: 70%;
+
+                & img {
+                    position: relative;
+                    top: -560px;
+                    left: 600px;
+                    width: 1000px;
+                    transform: rotate(-30deg);
+                }
+            }
+
+            & .content {
+                position: fixed;
+                right: 100px;
+                width: 75%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                top: 850px;
+                left: 320px;
+                align-items: end;
+                gap: 20px;
+
+                & .Pc_1 {
+                    font-family: "Dancing Script", cursive;
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+
+                & h2 {
+                    font-family: "Dancing Script", cursive;
+                    font-size: 5em;
+                    line-height: 1em;
+                }
+
+                & .Descrição {
+                    color: rgb(193, 194, 195);
+                    font-size: 17px;
+                    text-align: right;
+                    max-width: 500px;
+                }
+
+                & .BOO {
+
+                    border: 2px solid rgb(255, 255, 255);
+                    width: 120px;
+                    height: 60px;
+                    cursor: pointer;
+                    font-size: 20px;
+                    border-radius: 40px;
+                    background-color: rgba(236, 235, 237, 0.291);
+                    color: rgb(255, 255, 255);
+                    transform: translateY(63px);
+
+                    &:hover {
+                        background-color: rgba(29, 25, 39, 0.233);
+                    }
+                }
+
+
+            }
+
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 300cm;
+            top: 980px;
+            left: -1990px;
+            border-top: 1px solid rgb(255, 255, 255);
+        }
+
+
+    }
+
+    .seta {
+        width: 4vw;
+        position: absolute;
+        top: 84vh;
+        left: 50vh;
+        display: flex;
+        justify-content: space-between;
+
+
+        & button:nth-child(1) {
+            & img {
+
+                transform: scaleX(-1);
+            }
+
+        }
+
+        & button {
+            width: 50px;
+            height: 50px;
+            border-radius: 30%;
+            border: none;
+            cursor: pointer;
+
+
+            & img {
+                margin-top: 3px;
+                width: 40px;
+            }
+
+            &:hover {
+                background-color: rgba(126, 7, 217, 0.401);
+
+
+            }
+        }
+    }
+
+    & .indicators {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 200px;
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        gap: 15px;
+
+        & .number {
+            font-family: "Datatype", monospace;
+            position: relative;
+            top: 250px;
+            font-size: 5em;
+        }
+
+        & ul {
+            position: relative;
+            transform: translateY(290px);
+            list-style: none;
+            display: flex;
+            gap: 10px;
+
+            & li {
+                width: 35px;
+                height: 5px;
+                background-color: rgb(144, 0, 255);
+                border-radius: 5px;
+                transition: 0.5s;
+            }
+
+            & .Active {
+
+                background-color: aliceblue;
+
+            }
+
+
+        }
+
+
+    }
+
+}
+
+header img {
+    width: 1000px;
+    height: 150px;
+}
+
+h1 {
+    font-family: "Noto Sans NKo", sans-serif;
+    font-size: 99px;
+    background: linear-gradient(200deg, rgb(72, 7, 89), rgb(141, 11, 161), rgb(99, 11, 201));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section {
+
+    & .lista {
+
+        & .Itens {
+            transform: translateX(100vw);
+            transition: 0.5s;
+            opacity: 0;
+
+
+            & .img_Pc {
+
+                img {
+                    transform: rotate(0);
+                    transition: 0.5s;
+                    transition-delay: 0.3;
+                }
+            }
+        }
+
+        & .content {
+
+            & .Pc_1,
+            h2,
+            .Descrição,
+            .BOO {
+                transform: translateX(200px);
+                transition: 0.7s;
+                transition-delay: 0.3s;
+                opacity: 0;
+            }
+
+            & h2 {
+                transition-delay: 0.6s
+            }
+
+            & .Descrição {
+                transition-delay: 0.8s
+            }
+
+            & .BOO {
+                transition-delay: 0.10s
+            }
+        }
+
+
+
+        & .active {
+            transform: translateX(0vw);
+            transition: 0.5s;
+            opacity: 1;
+
+            & .img_Pc {
+
+                img {
+                    transform: rotate(-20deg);
+                }
+            }
+
+            & .content {
+
+                & .Pc_1,
+                h2,
+                .Descrição,
+                .BOO {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.content {
+    & .sim {
+        position: fixed;
+        transform: translateY(50px);
+        left: 422px;
+
+    }
+
+}
